@@ -12,7 +12,7 @@ const refs = {
 const options = {
     root: null,
     rootMargin: '20%',
-    treshhold: 0.0,
+    treshhold: 0,
 }
     const observer = new IntersectionObserver(renderNextPages, options);
 
@@ -25,18 +25,18 @@ export async function renderTrendingWithScroll() {
     observer.observe(refs.guard);
 }
 
-async function renderNextPages(entries) {
-    entries.forEach(async (entry) => {
+function renderNextPages(entries) {
+    entries.forEach((entry) => {
         if(entry.isIntersecting) {
             page += 1;
-            await renderMarkup();
+            renderMarkup();
         }
     })
 }
 
 async function renderMarkup() {
     trending = await (await getMovies(path, page)).data;
-    await refs.container.insertAdjacentHTML('beforeend', makeCard(trending.results));
+    refs.container.insertAdjacentHTML('beforeend', makeCard(trending.results));
     makeYears('.films__date');
-    await makeGenres('.films__genre');
+    makeGenres('.films__genre');
 }

@@ -26,12 +26,12 @@ export async function renderTrending() {
 // дальше подключение пагинации        
 }
 
-async function renderPages(e) {
+function renderPages(e) {
         if(!getPageFromPagination(e.target, page)) {
             return;
         }
         page = getPageFromPagination(e.target, page);
-        await renderMarkup();
+        renderMarkup();
 }
 
 async function renderMarkup() {
