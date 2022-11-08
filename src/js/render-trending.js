@@ -17,7 +17,7 @@ export async function renderTrending() {
   makeYears('.films__date');
   await makeGenres('.films__genre');
 
-  // setTimeout(spinner, 1500);
+  setTimeout(spinner, 1500);
 
   console.log(trending.results[1]);
   localStorage.setItem('card', JSON.stringify(trending.results[1]));
