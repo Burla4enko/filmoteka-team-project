@@ -6,7 +6,10 @@ export async function makeGenres(selector, page) {
     const path = 'genre/movie/list';
     const genres = await (await getMovies(path)).data.genres;
     
-    genreFields.forEach((item, idx) => { 
+    genreFields.forEach((item, idx) => {
+        if(!page) {
+            item.textContent = getGenreFromId(item.textContent, genres);
+        }
         // обрабатывает только новые карточки
         if (idx >= (page - 1) * 20) {
             item.textContent = getGenreFromId(item.textContent, genres);
