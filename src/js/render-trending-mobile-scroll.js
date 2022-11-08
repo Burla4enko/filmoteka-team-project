@@ -1,5 +1,5 @@
 import { getMovies } from "./get-movies";
-import makeCard from '../templates/card-template.hbs'
+import makeCard from '../templates/card-template-homepage.hbs'
 import { makeGenres } from "./secondary-functions/genres";
 import { makeYears } from "./secondary-functions/year";
 
@@ -38,6 +38,6 @@ function renderNextPages(entries) {
 async function renderMarkup() {
     trending = await (await getMovies(path, page)).data;
     refs.container.insertAdjacentHTML('beforeend', makeCard(trending.results));
-    makeYears('.films__date');
+    makeYears('.films__date', page);
     makeGenres('.films__genre', page);
 }

@@ -1,5 +1,5 @@
 import { getMovies } from "./get-movies";
-import makeCard from '../templates/card-template.hbs';
+import makeCard from '../templates/card-template-homepage.hbs';
 import {activatePagination} from './pagination';
 import { getPageFromPagination } from "./secondary-functions/get-page-from-pagination";
 import { makeGenres } from "./secondary-functions/genres";
