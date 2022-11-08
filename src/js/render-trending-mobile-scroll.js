@@ -11,10 +11,11 @@ const refs = {
 
 const options = {
     root: null,
-    rootMargin: '20%',
+    rootMargin: '30%',
     treshhold: 0,
 }
-    const observer = new IntersectionObserver(renderNextPages, options);
+
+const observer = new IntersectionObserver(renderNextPages, options);
 
 const path = 'trending/movie/day';
 let page = 1;
@@ -38,5 +39,5 @@ async function renderMarkup() {
     trending = await (await getMovies(path, page)).data;
     refs.container.insertAdjacentHTML('beforeend', makeCard(trending.results));
     makeYears('.films__date');
-    makeGenres('.films__genre');
+    makeGenres('.films__genre', page);
 }

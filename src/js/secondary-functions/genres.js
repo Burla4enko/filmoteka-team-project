@@ -1,16 +1,20 @@
 import { getMovies } from "../get-movies";
 
-export function makeGenres(selector) {
+export async function makeGenres(selector, page) {
     const genreFields = document.querySelectorAll(selector);
-    console.log(genreFields);
-    genreFields.forEach(item => { 
-        getGenreFromId(item.textContent).then(result => item.textContent = result);
+    
+    const path = 'genre/movie/list';
+    const genres = await (await getMovies(path)).data.genres;
+    
+    genreFields.forEach((item, idx) => { 
+        // обрабатывает только новые карточки
+        if (idx >= (page - 1) * 20) {
+            item.textContent = getGenreFromId(item.textContent, genres);
+        }
     });
 }
 
-async function getGenreFromId(id) {
-    const path = 'genre/movie/list';
-    const genres = await (await getMovies(path)).data.genres;
+function getGenreFromId(id, genres) {
     const arrOfIds =id.split(',');
     const arrOfGenres = [];
 
@@ -24,9 +28,8 @@ async function getGenreFromId(id) {
             arrOfGenres.push(i);
         }
         else {
-            arrOfGenres.push(genres.find(genre => genre.id === +i).name);
+            i && arrOfGenres.push(genres.find(genre => genre.id === +i).name);
         }
     });
     return arrOfGenres.join(', ');
-
 }
