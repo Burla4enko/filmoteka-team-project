@@ -52,6 +52,10 @@
         @include font(500, 12px, 1.33);
         text-align: center;
 
+        &:not([disabled]) {
+            cursor: pointer;
+        }
+
         &:hover {
             font-weight: 700;
         }
