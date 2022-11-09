@@ -4,20 +4,20 @@ import { getTrailerById } from './get-movies';
 
 let modalTrailer = null;
 
-class OpenModal {
-  #windowKeyHandler = this.onWindowClick.bind(this);
-  onstructor(argument) {
-    this.id = argument.id;
-    this.instance = basicLightbox.create(modalWindowMovie(this.movieObj), {
-      onClose: () => {
-        this.onCloseModal();
-      },
-      onShow: () => {
-        this.onShowModal();
-      },
-    });
-  }
-}
+// class OpenModal {
+//   #windowKeyHandler = this.onWindowClick.bind(this);
+//   onstructor(argument) {
+//     this.id = argument.id;
+//     this.instance = basicLightbox.create(modalWindowMovie(this.movieObj), {
+//       onClose: () => {
+//         this.onCloseModal();
+//       },
+//       onShow: () => {
+//         this.onShowModal();
+//       },
+//     });
+//   }
+// }
 
 const createTrailerModal = async function (movie) {
   let trailerObj;
@@ -75,6 +75,6 @@ function onEscKeydown(e) {
     modalTrailer.close();
   }
 }
-// instance.show();
+instance.show();
 export { createTrailerModal };
-export { OpenModal };
+// export { OpenModal };

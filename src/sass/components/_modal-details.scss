@@ -16,11 +16,11 @@
   }
 }
 
-// .backdrop.is-hidden {
-//   opacity: 0;
-//   pointer-events: none;
-//   visibility: hidden;
-// }
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
 
 .modal {
   position: relative;

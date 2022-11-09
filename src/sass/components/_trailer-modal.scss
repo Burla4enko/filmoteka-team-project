@@ -51,14 +51,6 @@
   }
 }
 
-.movie__name {
-  font-size: 10px;
-
-  @include desktop {
-    font-size: 20px;
-  }
-}
-
 .hidden-button {
   display: none;
 }
