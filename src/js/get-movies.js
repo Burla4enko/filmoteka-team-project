@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '8cb2067df7427c657a5f093d2a8e51ae';
@@ -10,7 +10,11 @@ export function getMovies(path, page = 1, query = '') {
     );
   }
 
+  return axios.get(`${BASE_URL}/${path}?api_key=${API_KEY}&page=${page}`);
+}
+
+export async function getMoviesById(path, appendToResponse = '') {
   return axios.get(
-    `${BASE_URL}/${path}?api_key=${API_KEY}&page=${page}`
+    `${BASE_URL}/${path}?api_key=${API_KEY}&language=en-US&append_to_response=${appendToResponse}`
   );
 }

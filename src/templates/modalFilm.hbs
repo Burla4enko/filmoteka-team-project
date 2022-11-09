@@ -6,14 +6,13 @@
       </svg>
     </button>
     <div class='modal__wrapper-img'>
-        <a class='gallery__link' href={{largeImageURL}}>
       <img
         class='modal__img'
         src='https://image.tmdb.org/t/p/w342{{poster_path}}'
         alt='Film {{title}} poster'
+        data-id={{id}}
         loading='lazy'
       />
-      </a>
     </div>
     <div class='modal__info'>
       <h3 class='modal__title'>{{title}}</h3>
