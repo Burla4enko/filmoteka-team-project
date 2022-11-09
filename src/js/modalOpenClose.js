@@ -3,6 +3,7 @@ import { getMoviesById } from './get-movies';
 import modalFilm from '../templates/modalFilm.hbs';
 
 const backdrop = document.querySelector('.backdrop');
+const modal = document.querySelector('.modal');
 const films = document.querySelector('.films');
 
 films.addEventListener('click', onOpenModal);
@@ -10,10 +11,9 @@ films.addEventListener('click', onOpenModal);
 export function onOpenModal(evt) {
   evt.preventDefault();
   console.log(evt);
-  const currentItem = evt.target;
-  let movieId = Number(evt.target.closest('IMG').dataset.id);
-  console.log(movieId);
-
+  const currentItem = evt.target.closest('li');
+  console.log(currentItem);
+  let movieId = +currentItem.dataset.id;
   async function onMovieClick() {
     try {
       const path = `/movie/${movieId}`;
@@ -30,6 +30,7 @@ export function onOpenModal(evt) {
   backdrop.classList.remove('is-hidden');
   const instance = basicLightbox.create(backdrop, {
     onShow: () => {
+      modal;
       document.addEventListener('keydown', onCloseModalEsc);
     },
     onClose: () => {
@@ -46,6 +47,7 @@ export function onOpenModal(evt) {
   }
 
   function onCloseModalEsc(evt) {
+    console.log(evt);
     if (evt.code === 'Escape') {
       instance.close();
     }
