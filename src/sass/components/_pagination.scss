@@ -6,6 +6,10 @@
     margin: 0 auto;
     padding-bottom: var(--section-padding);
 
+    @include mobile-only() {
+        padding-bottom: 40px;
+    }
+
     &__pages {
         display: flex;
     }

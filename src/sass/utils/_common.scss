@@ -53,6 +53,8 @@ a {
 
 .container {
     margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
 
     @include mobile-only() {
         max-width: 480px;
@@ -64,12 +66,16 @@ a {
         max-width: $tablet;
         padding-left: var(--gutter);
         padding-right: var(--gutter);
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     @include desktop() {
         max-width: $desktop;
         padding-left: var(--gutter);
         padding-right: var(--gutter);
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
 
