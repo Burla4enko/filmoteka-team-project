@@ -5,6 +5,7 @@ import { createMarkup } from './render-searchQuery';
 import { getPageFromPagination } from './secondary-functions/get-page-from-pagination';
 import Notiflix from 'notiflix';
 import { spinner } from './spinner';
+import {changeBgIfQueryIsUkr} from './secondary-functions/change-bg-on-ukr-query'
 
 Notiflix.Notify.init({
   width: '280px',
@@ -33,6 +34,7 @@ function resetRequest() {
 export async function onSubmit(e) {
   e.preventDefault();
   query = e.currentTarget.elements.searchQuery.value;
+  changeBgIfQueryIsUkr(query);
   resetRequest();
 
   try {

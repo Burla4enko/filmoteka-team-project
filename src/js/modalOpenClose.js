@@ -16,7 +16,6 @@ export function onOpenModal(evt) {
   async function onMovieClick() {
     try {
       const movieInfo = await (await getMovieById(id)).data;
-      backdrop.innerHTML = modalFilm(movieInfo.results);
       renderModalFilm({ movieInfo });
     } catch (error) {
       console.log(error.message);
