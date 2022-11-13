@@ -97,4 +97,8 @@ async function getSearchFetch() {
   const getFetchMovieResponse = await getMovies(PATH, page, query);
   const moviesArray = await getFetchMovieResponse.data.results;
   createMarkup(moviesArray, page);
+  document.querySelector('.films').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+});
 }

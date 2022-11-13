@@ -46,6 +46,10 @@ export function renderPages(e) {
   }
   page = getPageFromPagination(e.target, page);
   renderMarkup();
+  document.querySelector('.films').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+});
 }
 
 async function renderMarkup() {
