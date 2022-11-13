@@ -107,14 +107,29 @@
 
 .nav__list {
   display: flex;
+  position: relative;
   gap: 39px;
   @include tablet-only() {
     gap: 40px;
   }
 }
 
-.nav__link--active {
-  border-bottom: 3px solid var(--menu-line-color);
+.nav__link--active::after {
+  content: "";
+
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+
+  display: block;
+  width: 48%;
+  height: 3px;
+
+  background-color: #ff001b;
+}
+
+.nav__link--active:hover::after {
+  transform: scaleX(1.5);
 }
 
 // LIBRARY BUTTON

@@ -85,9 +85,13 @@
 }
 
 .logo-svg {
+    position: relative;
     width: 24px;
     height: 24px;
     fill: rgba(255, 255, 255, 1);
+
+    animation-name: logoMove;
+    animation-duration: 5000ms;
 }
 
 .header__logo-text {
@@ -101,6 +105,8 @@
         line-height: 1.17;
 
         margin-left: 8px;
+        animation-name: logoTextColor;
+        animation-duration: 5000ms;
     }
     @include desktop() {
         margin-left: 10px;
@@ -134,6 +140,10 @@
     height: 3px;
 
     background-color: #ff001b;
+}
+
+.underline:hover::after {
+    transform: scaleX(1.5);
 }
 
 .search-form {
@@ -193,3 +203,4 @@ input::placeholder {
 
     fill: rgba(255, 255, 255, 1);
 }
+

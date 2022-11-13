@@ -38,4 +38,6 @@
 .footer__heart-icon { 
   margin-left: 10px; 
   margin-right: 10px; 
+  animation: beat 750ms infinite alternate;
+  transform-origin: center;
 }
