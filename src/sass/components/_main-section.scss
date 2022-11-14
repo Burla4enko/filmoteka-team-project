@@ -74,12 +74,15 @@
 .films__title {
   @include font(500, 12px, 1.17);
   text-transform: uppercase;
-  color: var(--text-color-main);
+
   margin-bottom: 2px;
 
   @include tablet() {
     line-height: 1.33;
   }
+  // .tittle-white{
+  //   color: var(--text-color-main);
+  // }
 }
 
 .films__meta {
@@ -89,10 +92,10 @@
   color: var(--accent-color);
 }
 
-  .films__genre {
-    border-right: solid 1px currentColor;
-    padding-right: .5em;
-    margin-right: .5em;
+.films__genre {
+  border-right: solid 1px currentColor;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 .films__rating {
