@@ -3,7 +3,8 @@ import { onSubmit } from './js/search/on-search-submit';
 import { checkInputQuery } from './js/search/check-input-query';
 import debounce from 'lodash.debounce';
 import { onMovieCardClick } from './js/modal-movie-info';
-import {getGenres} from './js/fetch-functions/get-genres';
+import { getGenres } from './js/fetch-functions/get-genres';
+import { trailer } from './js/modal/trailer';
 
 $('.carousel').slick({
   dots: true,
