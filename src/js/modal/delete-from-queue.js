@@ -17,7 +17,7 @@ export function deleteFromWatched(evt) {
   createMarkup(watchedList);
 }
 
-export function removewatchedToQueue(evt) {
+export function removeWatchedToQueue(evt) {
   const id = +evt.target.dataset.id;
   let watchedList = JSON.parse(localStorage.getItem('watchedList'));
   watchedList = watchedList.filter(item => item.id !== id);

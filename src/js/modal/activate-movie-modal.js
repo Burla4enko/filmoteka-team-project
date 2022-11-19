@@ -1,9 +1,13 @@
-import { addToQueueOnClick } from '../library/queue-add';
+import { 
+  addToQueueOnClick
+  //, removeWatchedToQueue
+
+} from '../library/queue-add';
 import { addToWatchedOnClick } from '../library/watched-add';
 import {
   deleteFromQueue,
   deleteFromWatched,
-  removewatchedToQueue,
+  //removeWatchedToQueue,
 } from './delete-from-queue';
 
 export function activateModalBtns() {
@@ -30,11 +34,11 @@ export function activateModalBtns() {
     refs.removeBtn.addEventListener('click', deleteFromWatched);
     refs.removeBtn.addEventListener('click', closeModal);
 
-    refs.addToQueueBtn.style.display = 'none';
-    // refs.addToQueueBtn.innerHTML = 'Remove to Queue';
-    // refs.addToQueueBtn.removeEventListener('click', addToQueueOnClick);
-    // refs.addToQueueBtn.addEventListener('click', removewatchedToQueue);
-    // refs.addToQueueBtn.addEventListener('click', closeModal);
+    //refs.addToQueueBtn.style.display = 'none';
+    //refs.addToQueueBtn.innerHTML = 'Remove to Queue';
+    refs.addToQueueBtn.removeEventListener('click', addToQueueOnClick);
+    refs.addToQueueBtn.addEventListener('click', removeWatchedToQueue);
+    refs.addToQueueBtn.addEventListener('click', closeModal);
   }
   // для страницы очереди
   else if (document.querySelector('#queue-btn.active')) {
