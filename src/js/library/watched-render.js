@@ -4,7 +4,6 @@ const container = document.querySelector('.films');
 //кнопка "QUEUE" на странице библиотеки
 const renderQueueBtn = document.querySelector('button#queue-btn');
 const renderWatchedBtn = document.querySelector('button#watched-btn');
-// const watchedList = JSON.parse(localStorage.getItem("watchedList"));
 
 export function renderWatched() {
   renderWatchedBtn.addEventListener('click', watchedMarkup);

@@ -5,7 +5,6 @@ import {
   deleteFromWatched,
   //removeWatchedToQueue,
 } from './delete-from-queue';
-import { removeWatchedToQueue } from '../library/remove-watched-to-queue';
 
 export function activateModalBtns() {
   const refs = {
@@ -31,11 +30,7 @@ export function activateModalBtns() {
     refs.removeBtn.addEventListener('click', deleteFromWatched);
     refs.removeBtn.addEventListener('click', closeModal);
 
-    //refs.addToQueueBtn.style.display = 'none';
-    //refs.addToQueueBtn.innerHTML = 'Remove to Queue';
-    //refs.addToQueueBtn.removeEventListener('click', addToQueueOnClick);
     refs.addToQueueBtn.addEventListener('click', addToQueueOnClick);
-    //refs.addToQueueBtn.addEventListener('click', removeWatchedToQueue);
     refs.addToQueueBtn.addEventListener('click', closeModal);
   }
   // для страницы очереди
