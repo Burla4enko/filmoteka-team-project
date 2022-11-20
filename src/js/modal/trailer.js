@@ -8,6 +8,10 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '8cb2067df7427c657a5f093d2a8e51ae';
 // import { spinner } from '../spinner';
 
+const refs = {
+  trailerBtn: document.querySelector('.trailer-btn'),
+};
+
 async function onTrailerClick() {
   await fetchTrailer(currentId);
 }
@@ -44,3 +48,18 @@ function renderTrailer(key) {
   }
 }
 export { fetchTrailer };
+
+//Приклда по якому воно мало би працювати
+// trailerBtn.addEventListener('click', () => fetchTrailer(currentId), {
+//   once: true,
+// });
+// toggleModal();
+
+// function toggleModal() {
+//   window.addEventListener('keydown', onEscPress);
+//   refs.modalFilm.classList.toggle('is-hidden');
+//   refs.body.classList.toggle('no-scroll');
+//   if (refs.modalFilm.classList.contains('is-hidden')) {
+//     window.removeEventListener('keydown', onEscPress);
+//   }
+// }
