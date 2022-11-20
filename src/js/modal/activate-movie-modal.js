@@ -1,14 +1,11 @@
-import { 
-  addToQueueOnClick
-  //, removeWatchedToQueue
-
-} from '../library/queue-add';
+import { addToQueueOnClick } from '../library/queue-add';
 import { addToWatchedOnClick } from '../library/watched-add';
 import {
   deleteFromQueue,
   deleteFromWatched,
   //removeWatchedToQueue,
 } from './delete-from-queue';
+import { removeWatchedToQueue } from '../library/remove-watched-to-queue';
 
 export function activateModalBtns() {
   const refs = {
@@ -36,8 +33,9 @@ export function activateModalBtns() {
 
     //refs.addToQueueBtn.style.display = 'none';
     //refs.addToQueueBtn.innerHTML = 'Remove to Queue';
-    refs.addToQueueBtn.removeEventListener('click', addToQueueOnClick);
-    refs.addToQueueBtn.addEventListener('click', removeWatchedToQueue);
+    //refs.addToQueueBtn.removeEventListener('click', addToQueueOnClick);
+    refs.addToQueueBtn.addEventListener('click', addToQueueOnClick);
+    //refs.addToQueueBtn.addEventListener('click', removeWatchedToQueue);
     refs.addToQueueBtn.addEventListener('click', closeModal);
   }
   // для страницы очереди

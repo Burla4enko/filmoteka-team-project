@@ -17,11 +17,12 @@ export function deleteFromWatched(evt) {
   createMarkup(watchedList);
 }
 
-export function removeWatchedToQueue(evt) {
-  const id = +evt.target.dataset.id;
-  let watchedList = JSON.parse(localStorage.getItem('watchedList'));
-  watchedList = watchedList.filter(item => item.id !== id);
-  localStorage.setItem('watchedList', JSON.stringify(watchedList));
-  createMarkup(watchedList);
-  console.log('deleteFromWatched выполняется 2');
-}
+// export async function removeWatchedToQueue(evt) {
+//   const id = +evt.target.dataset.id;
+//   let watchedList = JSON.parse(localStorage.getItem('watchedList'));
+//   watchedList = watchedList.filter(item => item.id !== id);
+//   localStorage.setItem('watchedList', JSON.stringify(watchedList));
+//   createMarkup(watchedList);
+//   queueList.push()
+//   console.log('deleteFromWatched выполняется 2');
+// }

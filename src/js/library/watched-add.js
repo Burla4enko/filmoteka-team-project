@@ -17,7 +17,8 @@ export async function addToWatchedOnClick(e) {
 
   if (watchedList.find(item => item.id === +movieId)) {
     return Notiflix.Notify.warning(messageWatched);
-  } else {
+  } 
+  else {
     movie.watched = true;
     watchedList.push(movie);
     localStorage.setItem('watchedList', JSON.stringify(watchedList));
@@ -52,3 +53,4 @@ export async function addToWatchedOnClick(e) {
     }
   }
 }
+
